@@ -422,7 +422,7 @@ def display_splash_screen() -> None:
             ~ [data-testid="stHorizontalBlock"] {
             position: relative;
             z-index: 300;
-            margin-top: -15vh;
+            margin-top: -2.2rem;
         }
 
         /* Gradient pill style for the Enter button */
@@ -431,9 +431,9 @@ def display_splash_screen() -> None:
             color: #ffffff !important;
             border: none !important;
             border-radius: 50px !important;
-            font-size: 1.3em !important;
+            font-size: 1.1em !important;
             font-weight: 700 !important;
-            padding: 18px 58px !important;
+            padding: 14px 48px !important;
             box-shadow: 0 8px 34px rgba(139, 92, 246, 0.62) !important;
             animation: ww-float-btn 2.2s ease-in-out infinite;
             letter-spacing: 0.5px;
@@ -453,7 +453,7 @@ def display_splash_screen() -> None:
     st.markdown(
         f'<div class="ww-full-splash" style="position:relative;width:100%;line-height:0;">'
         f'<img src="data:image/png;base64,{hero_b64}"'
-        f' style="width:100%;height:100vh;object-fit:contain;'
+        f' style="width:100%;height:78vh;object-fit:contain;'
         f'object-position:center center;background:#fdf8ff;display:block;"'
         f' alt="Wardrobe Wizard — Magically better outfits, every day" />'
         # Sparkle overlay — pointer-events:none so clicks pass through to image
