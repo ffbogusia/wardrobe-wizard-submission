@@ -43,7 +43,7 @@ It's a calm AI companion that looks at your actual clothes, understands your vib
 
 The outfit engine is **local, rule-based, and inspectable** — it never phones home just to tell you to wear jeans. The AI layers add explanation text and photo analysis on top, with graceful fallbacks when they're not available.
 
-<img width="800" alt="Wardrobe Wizard — widok startowy" src="https://github.com/user-attachments/assets/b7814a16-b9cd-4bfb-86f1-266419e68bdf" />
+<img width="800" alt="Wardrobe Wizard — corgi wizard hero" src="assets/1.png" />
 
 ---
 
@@ -63,8 +63,8 @@ Tell the Wizard the situation. Pick your vibe. Get dressed.
 The recommendation engine scores each wardrobe item against scenario, climate, vibe, formality, comfort, and category completeness — all **locally**, all **transparently**, zero black box.
 
 
-<img width="1813" height="553" alt="image" src="https://github.com/user-attachments/assets/98f30855-8236-480f-b751-71ca5c6729ac" />
-<img width="1811" height="485" alt="image" src="https://github.com/user-attachments/assets/bf510f5a-9c9d-4bc7-b748-87fb6f74b558" />
+<img width="800" alt="Wardrobe Wizard — ustawienia rekomendacji" src="assets/2.png" />
+<img width="800" alt="Wardrobe Wizard — wynik rekomendacji" src="assets/3.png" />
 
 
 ---
@@ -90,7 +90,7 @@ Sometimes you don't want options. You just want someone to tell you what to wear
 
 Low-Energy Decision Support strips it down to the minimum: one practical outfit, no overwhelming choices, a little reassurance that you're done. This is intentional product design — **AI should sometimes make things calmer, not louder.**
 
-<img width="1865" height="637" alt="image" src="https://github.com/user-attachments/assets/a0535fae-7926-4551-b089-0c0b406bfe1d" />
+<img width="800" alt="Wardrobe Wizard — widok aplikacji" src="assets/4.png" />
 
 ---
 
@@ -110,6 +110,8 @@ Type one item or dump in a whole batch. The parser structures it into proper war
 
 The flow includes controlled categories, tag normalization, category mismatch warnings, and duplicate prevention. No surprises.
 
+<img width="800" alt="Wardrobe Wizard — dodawanie ubrań" src="assets/5.png" />
+
 ---
 
 ### 📸 Photo analysis — clothing only, always
@@ -128,7 +130,7 @@ Here's the wall it will never cross:
 
 Everything detected shows up in a **human review table** first. You pick what gets added to your session wardrobe. If the vision model is unavailable, the feature fails safely and the rest of the app keeps working.
 
-<img width="1895" height="835" alt="image" src="https://github.com/user-attachments/assets/73d99a63-aa11-4c98-a9b0-1fed2ee17f69" />
+<img width="800" alt="Wardrobe Wizard — analiza zdjęcia" src="assets/6.png" />
 
 
 ---
@@ -146,7 +148,7 @@ This runs on a real **TypeScript + Express mini API deployed to Azure Container 
 
 The wording is careful throughout — *"estimated new-production impact avoided," "no-buy comparison estimate," "illustrative category estimate."* This is not a certified carbon calculator. It's an honest nudge toward using what you have.
 
-<img width="1812" height="472" alt="image" src="https://github.com/user-attachments/assets/c4d0b296-1055-4067-8166-a1820f673cfd" />
+<img width="800" alt="Wardrobe Wizard — Rewear Impact" src="assets/7.png" />
 
 ---
 
@@ -162,7 +164,7 @@ The app ships with 36 sample wardrobe items. You can:
 
 All changes are **session-only** — nothing persists, nothing is stored, nothing is shared.
 
-<img width="1871" height="595" alt="image" src="https://github.com/user-attachments/assets/2935c4fe-af76-4e98-9a3a-57f2f730217b" />
+<img width="800" alt="Wardrobe Wizard — przeglądanie szafy" src="assets/8.png" />
 
 ---
 
