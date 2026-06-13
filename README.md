@@ -43,6 +43,8 @@ It's a calm AI companion that looks at your actual clothes, understands your vib
 
 The outfit engine is **local, rule-based, and inspectable** — it never phones home just to tell you to wear jeans. The AI layers add explanation text and photo analysis on top, with graceful fallbacks when they're not available.
 
+<img width="800" alt="Wardrobe Wizard — widok startowy" src="https://github.com/user-attachments/assets/b7814a16-b9cd-4bfb-86f1-266419e68bdf" />
+
 ---
 
 ## 🌈 What the Wizard can do
@@ -59,6 +61,11 @@ Tell the Wizard the situation. Pick your vibe. Get dressed.
 | ⭐ Favorite item flags | 🌱 **Rewear Impact** — sustainability estimate for the look |
 
 The recommendation engine scores each wardrobe item against scenario, climate, vibe, formality, comfort, and category completeness — all **locally**, all **transparently**, zero black box.
+
+
+<img width="1813" height="553" alt="image" src="https://github.com/user-attachments/assets/98f30855-8236-480f-b751-71ca5c6729ac" />
+<img width="1811" height="485" alt="image" src="https://github.com/user-attachments/assets/bf510f5a-9c9d-4bc7-b748-87fb6f74b558" />
+
 
 ---
 
@@ -82,6 +89,8 @@ No live weather API — you tell it the context, local rules handle the rest. Re
 Sometimes you don't want options. You just want someone to tell you what to wear.
 
 Low-Energy Decision Support strips it down to the minimum: one practical outfit, no overwhelming choices, a little reassurance that you're done. This is intentional product design — **AI should sometimes make things calmer, not louder.**
+
+<img width="1865" height="637" alt="image" src="https://github.com/user-attachments/assets/a0535fae-7926-4551-b089-0c0b406bfe1d" />
 
 ---
 
@@ -119,6 +128,9 @@ Here's the wall it will never cross:
 
 Everything detected shows up in a **human review table** first. You pick what gets added to your session wardrobe. If the vision model is unavailable, the feature fails safely and the rest of the app keeps working.
 
+<img width="1895" height="835" alt="image" src="https://github.com/user-attachments/assets/73d99a63-aa11-4c98-a9b0-1fed2ee17f69" />
+
+
 ---
 
 ### 🌿 Rewear Impact — because your wardrobe is already doing something good
@@ -134,6 +146,8 @@ This runs on a real **TypeScript + Express mini API deployed to Azure Container 
 
 The wording is careful throughout — *"estimated new-production impact avoided," "no-buy comparison estimate," "illustrative category estimate."* This is not a certified carbon calculator. It's an honest nudge toward using what you have.
 
+<img width="1812" height="472" alt="image" src="https://github.com/user-attachments/assets/c4d0b296-1055-4067-8166-a1820f673cfd" />
+
 ---
 
 ### 🗂️ Browse, search, and edit your wardrobe
@@ -147,6 +161,8 @@ The app ships with 36 sample wardrobe items. You can:
 - 🔄 restore the full sample wardrobe at any time
 
 All changes are **session-only** — nothing persists, nothing is stored, nothing is shared.
+
+<img width="1871" height="595" alt="image" src="https://github.com/user-attachments/assets/2935c4fe-af76-4e98-9a3a-57f2f730217b" />
 
 ---
 
@@ -290,6 +306,10 @@ Copilot was a genuine development partner here, not just autocomplete. Here's wh
 
 ## 🏆 How Wardrobe Wizard maps to the judging criteria
 
+> 💜 **Hack for Good** — Wardrobe Wizard tackles a genuine everyday need: decision fatigue is real, and buying new clothes because choosing feels hard is a measurable sustainability problem. This is a tool for that.
+>
+> ♿ **Accessibility** — Low-Energy Decision Support is accessibility-first by design: fewer choices, less cognitive load, one good answer. Built for the days when your brain just isn't cooperating.
+
 | Criteria | Weight | What the Wizard delivers |
 |:---|:---:|:---|
 | 🎯 **Accuracy & Relevance** | 20% | Working public demo · Public repo · GitHub Copilot throughout · Real user problem with practical, testable output |
@@ -425,27 +445,6 @@ wardrobe-wizard/
 | ☁️ | Azure Container Apps | Rewear Impact API hosting |
 | 🔌 | MCP | Agent-ready tool interface |
 | 🤖 | GitHub Copilot | AI-assisted development throughout |
-
----
-
-## ✅ Smoke test checklist
-
-```bash
-python -m compileall app.py src mcp_server
-cd impact-api && npm run build && npm audit && cd ..
-```
-
-- [ ] Landing page loads
-- [ ] Recommend Outfit works
-- [ ] Travel day hot-to-cold scenario works
-- [ ] Main Outfit and Alternative Outfit appear
-- [ ] Why it works appears
-- [ ] Rewear Impact appears (API or Python fallback)
-- [ ] Add one item → review table appears → saves correctly
-- [ ] Add multiple items in one batch
-- [ ] Photo Analyzer respects clothing-only constraints
-- [ ] Browse Wardrobe search and filter work
-- [ ] No red Streamlit errors anywhere
 
 ---
 
