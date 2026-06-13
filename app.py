@@ -1351,8 +1351,9 @@ def display_rewear_impact(outfit: dict) -> None:
 
 
 def collapse_style_vibes_if_complete() -> None:
-    """Collapse the style vibe selector after two choices without interrupting other widgets."""
-    selected_vibes = st.session_state.get("recommend_style_vibes", [])
+    """Persist selected style vibes and collapse the selector after two choices."""
+    selected_vibes = list(st.session_state.get("recommend_style_vibes_widget", []))
+    st.session_state["recommend_style_vibes"] = selected_vibes
 
     if len(selected_vibes) == 2:
         st.session_state["style_vibes_editing"] = False
@@ -1366,17 +1367,27 @@ def display_style_vibes_selector() -> list[str]:
         st.session_state["style_vibes_editing"] = True
 
     if st.session_state.get("style_vibes_editing", True):
-        st.multiselect(
+        if "recommend_style_vibes_widget" not in st.session_state:
+            st.session_state["recommend_style_vibes_widget"] = selected_vibes
+
+        selected_vibes = st.multiselect(
             "Style vibes (optional — choose up to 2)",
             STYLE_VIBES,
             max_selections=2,
-            key="recommend_style_vibes",
+            key="recommend_style_vibes_widget",
             help=(
                 "Style vibes describe the mood of the outfit, not the user's "
                 "gender or identity."
             ),
             on_change=collapse_style_vibes_if_complete,
         )
+
+        selected_vibes = list(selected_vibes)
+        st.session_state["recommend_style_vibes"] = selected_vibes
+
+        if len(selected_vibes) == 2:
+            st.session_state["style_vibes_editing"] = False
+
     else:
         chips = "".join(
             f'<span class="ww-vibe-chip">{vibe}</span>' for vibe in selected_vibes
@@ -1389,6 +1400,7 @@ def display_style_vibes_selector() -> list[str]:
         )
 
         if st.button("Change vibes", key="change_recommend_style_vibes"):
+            st.session_state["recommend_style_vibes_widget"] = selected_vibes
             st.session_state["style_vibes_editing"] = True
             st.rerun()
 
