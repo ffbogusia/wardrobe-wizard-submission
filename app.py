@@ -725,6 +725,7 @@ def prepare_photo_review_table(detected_items: list[dict]) -> pd.DataFrame:
 
     return pd.DataFrame(rows)
 
+
 def prepare_custom_item_review_table(parsed_items: list[dict]) -> pd.DataFrame:
     """Prepare parsed manual items for human review and editing."""
     rows = []
@@ -877,6 +878,7 @@ def build_reviewed_item_from_row(row: pd.Series, item_id: str | None = None) -> 
 
     return item
 
+
 def build_reviewed_photo_items(review_table: pd.DataFrame) -> list[dict]:
     """Convert the human-reviewed photo table back into wardrobe item dictionaries."""
     reviewed_items = []
@@ -888,6 +890,7 @@ def build_reviewed_photo_items(review_table: pd.DataFrame) -> list[dict]:
             reviewed_items.append(item)
 
     return reviewed_items
+
 
 def build_reviewed_custom_items(review_table: pd.DataFrame) -> list[dict]:
     """Convert reviewed manually parsed items back into wardrobe item dictionaries."""
@@ -901,6 +904,7 @@ def build_reviewed_custom_items(review_table: pd.DataFrame) -> list[dict]:
             reviewed_items.append(item)
 
     return reviewed_items
+
 
 def find_category_mismatches(review_table: pd.DataFrame) -> list[dict]:
     """Find strong name/category conflicts without overriding the user."""
@@ -1139,6 +1143,7 @@ def get_item_display_name(item: dict) -> str:
 
     return f"{favorite_marker}{name} — {category}, {color} ({item_id})"
 
+
 def set_item_favorite_in_session(selected_item_id: str, is_favorite: bool) -> bool:
     """Mark or unmark one wardrobe item as favorite in the current session only."""
     if not selected_item_id:
@@ -1150,6 +1155,7 @@ def set_item_favorite_in_session(selected_item_id: str, is_favorite: bool) -> bo
             return True
 
     return False
+
 
 def get_editable_item_snapshot(item: dict) -> dict:
     """Return normalized values that can be changed in the wardrobe editor."""
@@ -1193,6 +1199,7 @@ def update_item_in_session(updated_item: dict) -> bool:
         return True
 
     return False
+
 
 def remove_item_from_session(selected_item_id: str) -> bool:
     """Remove one item from the current Streamlit session wardrobe."""
@@ -1437,6 +1444,7 @@ def build_travel_context_text(
         + ". Prioritize comfortable layers, practical shoes, airport comfort, "
         "and clothing that can handle temperature changes."
     )
+
 
 def display_low_energy_pick(
     recommendation: dict,
@@ -2214,25 +2222,38 @@ with photo_tab:
         st.session_state["photo_items_added_for_file"] = ""
         st.caption("Upload a JPG or PNG image to start.")
     else:
+        max_photo_size_mb = 5
+        uploaded_photo_size_mb = uploaded_photo.size / (1024 * 1024)
+
+        if uploaded_photo_size_mb > max_photo_size_mb:
+            st.error(
+                "Please upload a smaller image. "
+                "Wardrobe Wizard accepts outfit photos up to 5 MB."
+            )
+            st.stop()
+
         if st.session_state["photo_analysis_file_name"] != uploaded_photo.name:
             st.session_state["photo_analysis_result"] = None
             st.session_state["photo_analysis_file_name"] = uploaded_photo.name
             st.session_state["photo_items_added_for_file"] = ""
 
-        st.image(
-            uploaded_photo,
-            caption="Uploaded outfit photo preview",
-            width="stretch",
-        )
+        preview_left, preview_center, preview_right = st.columns([1, 1.4, 1])
 
-        if st.button("Analyze photo", key="analyze_outfit_photo_button"):
-            with st.spinner("Analyzing visible clothing..."):
-                analysis_result = analyze_outfit_photo(uploaded_photo)
-
-            st.session_state["photo_analysis_result"] = analysis_result
-            st.session_state["corgi_mood"] = (
-                "sparkle" if analysis_result.get("analysis_ok") else "oops"
+        with preview_center:
+            st.image(
+                uploaded_photo,
+                caption="Uploaded outfit photo preview",
+                width=520,
             )
+
+            if st.button("Analyze photo", key="analyze_outfit_photo_button"):
+                with st.spinner("Analyzing visible clothing..."):
+                    analysis_result = analyze_outfit_photo(uploaded_photo)
+
+                st.session_state["photo_analysis_result"] = analysis_result
+                st.session_state["corgi_mood"] = (
+                    "sparkle" if analysis_result.get("analysis_ok") else "oops"
+                )
 
         display_photo_analysis_result(st.session_state["photo_analysis_result"])
         display_photo_review_flow(
