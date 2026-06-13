@@ -1690,6 +1690,7 @@ with recommend_tab:
     scenario = st.selectbox(
         "Choose a demo scenario",
         [
+            "Choose a scenario",
             "Office rainy day",
             "Date night",
             "Travel day",
@@ -1699,6 +1700,10 @@ with recommend_tab:
     )
 
     custom_scenario = ""
+    scenario_ready = scenario != "Choose a scenario"
+
+    if not scenario_ready:
+        st.info("Choose a scenario to unlock outfit details and recommendations.")
 
     if scenario == "Travel day":
         with st.expander("Optional travel details"):
@@ -1750,64 +1755,75 @@ with recommend_tab:
             key="recommend_custom_scenario",
         )
 
-    comfort_preference = st.selectbox(
-        "Comfort preference",
-        [
-            "High comfort preferred",
-            "Medium comfort is okay",
-            "No comfort preference",
-        ],
-        key="recommend_comfort_preference",
-    )
-
-    low_energy_mode = st.checkbox(
-        "Low-energy decision support",
-        key="recommend_low_energy_mode",
-        help=(
-            "Show one calm, good-enough outfit choice for moments when too many "
-            "options feel overwhelming."
-        ),
-    )
-
-    if st.button("Recommend outfit", key="recommend_outfit_button"):
-        st.session_state["corgi_mood"] = "celebrate"
-
-        recommendation = recommend_outfits(
-            wardrobe=wardrobe_items,
-            scenario=scenario,
-            custom_scenario=custom_scenario,
-            selected_vibes=selected_vibes,
-            comfort_preference=comfort_preference,
+    if scenario_ready:
+        comfort_preference = st.selectbox(
+            "Comfort preference",
+            [
+                "Choose comfort preference",
+                "High comfort preferred",
+                "Medium comfort is okay",
+                "No comfort preference",
+            ],
+            key="recommend_comfort_preference",
         )
 
-        main_outfit = recommendation["main_outfit"]
-        alternative_outfit = recommendation["alternative_outfit"]
+        comfort_ready = comfort_preference != "Choose comfort preference"
 
-        st.subheader("Main outfit")
-        display_outfit(main_outfit)
-
-        st.subheader("Alternative outfit")
-        display_outfit(alternative_outfit)
-
-        st.subheader("Why it works")
-        ai_explanation = generate_outfit_explanation(
-            recommendation=recommendation,
-            scenario=scenario,
-            custom_scenario=custom_scenario,
-            selected_vibes=selected_vibes,
-            comfort_preference=comfort_preference,
+        low_energy_mode = st.checkbox(
+            "Low-energy decision support",
+            key="recommend_low_energy_mode",
+            help=(
+                "Show one calm, good-enough outfit choice for moments when too many "
+                "options feel overwhelming."
+            ),
         )
-        st.info(ai_explanation, icon="✨")
 
-        if low_energy_mode:
-            display_low_energy_pick(
-                recommendation=recommendation,
+        if not comfort_ready:
+            st.info("Choose a comfort preference to enable the recommendation button.")
+
+        if st.button(
+            "Recommend outfit",
+            key="recommend_outfit_button",
+            disabled=not comfort_ready,
+        ):
+            st.session_state["corgi_mood"] = "celebrate"
+
+            recommendation = recommend_outfits(
+                wardrobe=wardrobe_items,
                 scenario=scenario,
                 custom_scenario=custom_scenario,
+                selected_vibes=selected_vibes,
                 comfort_preference=comfort_preference,
             )
 
-        display_rewear_impact(main_outfit)
+            main_outfit = recommendation["main_outfit"]
+            alternative_outfit = recommendation["alternative_outfit"]
+
+            st.subheader("Main outfit")
+            display_outfit(main_outfit)
+
+            st.subheader("Alternative outfit")
+            display_outfit(alternative_outfit)
+
+            st.subheader("Why it works")
+            ai_explanation = generate_outfit_explanation(
+                recommendation=recommendation,
+                scenario=scenario,
+                custom_scenario=custom_scenario,
+                selected_vibes=selected_vibes,
+                comfort_preference=comfort_preference,
+            )
+            st.info(ai_explanation, icon="✨")
+
+            if low_energy_mode:
+                display_low_energy_pick(
+                    recommendation=recommendation,
+                    scenario=scenario,
+                    custom_scenario=custom_scenario,
+                    comfort_preference=comfort_preference,
+                )
+
+            display_rewear_impact(main_outfit)
 
 with wardrobe_tab:
     st.subheader("Wardrobe summary")
