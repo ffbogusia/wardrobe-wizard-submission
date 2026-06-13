@@ -1,354 +1,349 @@
-# 🧙 Wardrobe Wizard
+<div align="center">
 
-[![Agents League 2026](https://img.shields.io/badge/Agents%20League-2026-blue)](https://github.com/microsoft/agentsleague)
-[![Track](https://img.shields.io/badge/Track-Creative%20Apps-purple)](https://github.com/microsoft/agentsleague/tree/main/starter-kits/1-creative-apps)
-[![Built with](https://img.shields.io/badge/Built%20with-GitHub%20Copilot-green)](https://github.com/features/copilot)
-[![MCP Tools](https://img.shields.io/badge/MCP%20Tools-3-orange)](https://modelcontextprotocol.io)
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-wardrobe--wizard.streamlit.app-ff4b4b)](https://wardrobe-wizard.streamlit.app/)
-[![License](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)
+# ✨👗 Wardrobe Wizard 🪄✨
 
-> **You already own the perfect outfit. You just can't see it right now.**
-> Wardrobe Wizard helps you pick one good-enough look from clothes you already own — with a real alternative, an explanation of why it works, and a no-buy sustainability estimate. No shopping links. No judgment. Just your wardrobe, finally useful.
+### *Your closet is full. Your brain is tired. Let's fix that.*
 
----
+<br>
 
-## 🎬 Demo
+```
+ ╔══════════════════════════════════════════════════════╗
+ ║  "I have nothing to wear" — said every person ever  ║
+ ║       with 47 items hanging in their closet         ║
+ ╚══════════════════════════════════════════════════════╝
+```
 
-📹 *[Watch the demo video →](https://youtu.be/TODO)*
+<br>
 
-**Try it now — no login, no account, no setup:**
-👉 **[wardrobe-wizard.streamlit.app](https://wardrobe-wizard.streamlit.app/)**
+[![Agents League @ AI Skills Fest 2026](https://img.shields.io/badge/🏆%20Agents%20League-%40%20AI%20Skills%20Fest%202026-c084fc?style=for-the-badge)](https://github.com/microsoft/Agents-League-AISF-Regulations)
+[![Creative Apps Track](https://img.shields.io/badge/🎨%20Track-Creative%20Apps-f472b6?style=for-the-badge)](https://developer.microsoft.com/en-us/reactor/events/27031/)
+[![GitHub Copilot](https://img.shields.io/badge/🤖%20Built%20with-GitHub%20Copilot-a78bfa?style=for-the-badge)](https://github.com/features/copilot)
 
----
+[![Live Demo](https://img.shields.io/badge/✨%20LIVE%20DEMO-Try%20it%20now!-ff6eb4?style=for-the-badge&logoColor=white)](https://wardrobe-wizard.streamlit.app/)
+[![MCP Tools](https://img.shields.io/badge/🔌%20MCP%20Tools-3%20included-fb923c?style=for-the-badge)](https://modelcontextprotocol.io)
+[![License](https://img.shields.io/badge/📄%20License-MIT-34d399?style=for-the-badge)](LICENSE)
 
-## 💡 Why this exists
+<br>
 
-Most mornings, the problem is not a lack of clothes. It is too many choices, too little energy, and a familiar feeling of *"I have nothing to wear"* while staring at a full wardrobe.
+**[✨ Try the live demo](https://wardrobe-wizard.streamlit.app/) · [📹 Watch the demo video](https://youtu.be/TODO) · [📖 Docs](docs/)**
 
-> People often buy more clothes not because they have nothing — but because **deciding what to wear takes energy**.
-
-Wardrobe Wizard is a calm decision-support tool. It does not connect to shopping sites. It does not push products. It works entirely from the user's existing wardrobe and helps them:
-
-- reduce decision fatigue,
-- reuse clothes they already own,
-- understand the real impact of buying new vs. rewearing,
-- stay in control of what the AI sees and suggests.
-
-The guiding principle: **AI should sometimes make things calmer, not louder.**
+</div>
 
 ---
 
-## ✨ Features
+## 💜 What is this, actually?
 
-### 👗 Outfit Recommendation
+You know that feeling. You're late. You're tired. You open the wardrobe and your brain just... stops working. Everything looks wrong. Nothing matches. You end up buying something new you didn't need, wearing the same three outfits on rotation, or going back to bed.
 
-Pick a real-life scenario, choose a style vibe or two, and get a complete outfit with a genuine alternative — not just a random list of items.
+**Wardrobe Wizard is built for that exact moment.**
 
-| What you set | What you get |
-|---|---|
-| Scenario (Office, Date night, Travel, Custom) | **Main Outfit** — scored, complete, context-aware |
-| Up to 2 style vibes (cozy, polished, minimal…) | **Alternative Outfit** — a real second option |
-| Comfort preference | **Why it works** — local explanation or AI-generated |
-| Favorite item flags | **Rewear Impact** — no-buy sustainability estimate |
+It's a calm AI companion that looks at your actual clothes, understands your vibe and the occasion, and puts together one real outfit — plus a genuine alternative. No shopping links. No judgment. No "you should really try a capsule wardrobe" lectures.
 
-The recommendation engine is **local, rule-based, and inspectable**. No API call required to get outfit results. Outfits are never black-box.
+> 💡 **The idea behind it:** people buy more clothes not because they have nothing to wear, but because *choosing takes energy*. AI should help with that — not make it louder.
 
-### ✈️ Travel Day Context
+The outfit engine is **local, rule-based, and inspectable** — it never phones home just to tell you to wear jeans. The AI layers add explanation text and photo analysis on top, with graceful fallbacks when they're not available.
 
-Travel Day unlocks practical packing context:
+---
 
-| Field | Options |
-|---|---|
-| Departure climate | hot · warm · mild · cold · rainy |
-| Destination climate | hot · warm · mild · cold · rainy |
-| Season | spring · summer · autumn · winter |
-| Flight type | short flight · long-haul flight |
+## 🌈 What the Wizard can do
 
-No live weather API. The user controls the context; local rules interpret it. This keeps the app reliable and transparent.
+### 👗 Outfit of the Day (and a backup)
 
-### 🧘 Low-Energy Decision Support
+Tell the Wizard the situation. Pick your vibe. Get dressed.
 
-For days when even picking a scenario feels like too much. One practical outfit. Fewer choices. No overwhelm.
+| You tell it... | It gives you... |
+|:---|:---|
+| 🎯 Scenario — *office rain, date night, travel, custom* | 👗 **Main Outfit** — complete, scored, context-aware |
+| 💅 Up to 2 style vibes — *cozy, polished, minimal, elegant...* | 👘 **Alternative Outfit** — a real second option, not a copy |
+| 🛋️ Comfort preference | 💬 **Why it works** — rule-based or AI-generated explanation |
+| ⭐ Favorite item flags | 🌱 **Rewear Impact** — sustainability estimate for the look |
 
-This is intentional product design: not every AI experience should maximize options.
+The recommendation engine scores each wardrobe item against scenario, climate, vibe, formality, comfort, and category completeness — all **locally**, all **transparently**, zero black box.
 
-### 📝 Add Items in Natural Language
+---
 
-Describe one item or a whole batch. The parser structures it for you.
+### ✈️ Packing for a trip? It's got you.
 
-```text
+Travel Day unlocks a whole extra layer of context — because "mild to tropical" is a very different packing problem than "cold to cold":
+
+```
+  departure climate  →  hot · warm · mild · cold · rainy
+  destination climate →  hot · warm · mild · cold · rainy
+  season             →  spring · summer · autumn · winter  
+  flight             →  short-haul · long-haul
+```
+
+No live weather API — you tell it the context, local rules handle the rest. Reliable, offline-capable, no API keys needed.
+
+---
+
+### 😮‍💨 Low-Energy Mode — for the really hard days
+
+Sometimes you don't want options. You just want someone to tell you what to wear.
+
+Low-Energy Decision Support strips it down to the minimum: one practical outfit, no overwhelming choices, a little reassurance that you're done. This is intentional product design — **AI should sometimes make things calmer, not louder.**
+
+---
+
+### 💬 Add things by just... describing them
+
+```
 blue linen shirt, top, casual, summer, breathable
 ```
 
-```text
+```
 black ankle boots, shoes, elegant, date night
 cream cardigan, jacket, cozy, office
 silver earrings, accessory, minimal, evening
 ```
 
-Before anything is saved, an **editable review table** appears. You approve what gets added — AI parsing helps, but the human decides.
+Type one item or dump in a whole batch. The parser structures it into proper wardrobe rows — and then shows you an **editable review table before anything gets saved**. AI helps, but you decide what goes in.
 
-The flow includes controlled categories, tag normalization, category mismatch warnings, and duplicate prevention.
-
-### 📸 Clothing-Only Photo Analysis
-
-Upload an outfit photo and the app detects visible clothing items using GitHub Models vision capabilities.
-
-**What the photo analyzer will never do:**
-
-| ❌ Not allowed | Why |
-|---|---|
-| Identify the person | Privacy |
-| Comment on body shape or attractiveness | Dignity |
-| Infer age, gender, or ethnicity | Ethics |
-| Infer health, disability, or pregnancy | Safety |
-| Store the image permanently | Data minimalism |
-
-Detected items appear in a **human review table** before being added to the session wardrobe. If no vision model is available, the feature fails safely and the rest of the app keeps working.
-
-### 🌱 Rewear Impact
-
-After each outfit recommendation, Wardrobe Wizard shows an educational no-buy comparison estimate: the rough new-production water and CO₂e impact that may be avoided by rewearing existing items instead of buying similar new ones.
-
-The calculation uses a real **TypeScript + Express mini API** deployed to **Azure Container Apps**. If the API is unavailable (scale-to-zero wake-up), a local Python fallback keeps the feature working.
-
-Careful wording is used throughout:
-- *"estimated new-production impact avoided"*
-- *"no-buy comparison estimate"*
-- *"illustrative category estimate"*
-- *"public-source benchmark"*
-
-This is not a certified carbon calculator. It is an honest, educational nudge toward using what you have.
-
-### 🗂️ Browse and Edit Wardrobe
-
-The app ships with a 36-item synthetic sample wardrobe. Users can:
-
-- filter by category and style tag,
-- search by item name,
-- mark items as favorites (favorites get a scoring boost),
-- edit rows in the current session,
-- add session-only items,
-- restore the full sample wardrobe.
-
-All changes are **session-only**. Nothing is written to disk. Nothing persists between page loads.
+The flow includes controlled categories, tag normalization, category mismatch warnings, and duplicate prevention. No surprises.
 
 ---
 
-## 🏗️ Architecture
+### 📸 Photo analysis — clothing only, always
 
-Three practical layers — each with a clear job and a fallback:
+Upload an outfit photo. The Wizard uses GitHub Models vision capabilities to detect the visible clothing items — and that's it.
+
+Here's the wall it will never cross:
+
+| 🚫 What it will never do | Why |
+|:---|:---|
+| Identify who the person is | Privacy |
+| Comment on body shape or attractiveness | Dignity |
+| Guess age, gender, or ethnicity | Ethics |
+| Infer health, disability, or pregnancy | Safety |
+| Store the image after the session | Data minimalism |
+
+Everything detected shows up in a **human review table** first. You pick what gets added to your session wardrobe. If the vision model is unavailable, the feature fails safely and the rest of the app keeps working.
+
+---
+
+### 🌿 Rewear Impact — because your wardrobe is already doing something good
+
+After every outfit recommendation, Wardrobe Wizard shows you an educational estimate of the new-production impact that *might* be avoided by rewearing what you already own instead of buying similar new items:
+
+- 💧 estimated water use avoided
+- 🌫️ estimated CO₂e avoided  
+- ⭐ whether your favourite items made the cut
+- 📋 item-level breakdown
+
+This runs on a real **TypeScript + Express mini API deployed to Azure Container Apps**. If the API is still waking up (scale-to-zero), a local Python fallback kicks in and the feature keeps working.
+
+The wording is careful throughout — *"estimated new-production impact avoided," "no-buy comparison estimate," "illustrative category estimate."* This is not a certified carbon calculator. It's an honest nudge toward using what you have.
+
+---
+
+### 🗂️ Browse, search, and edit your wardrobe
+
+The app ships with 36 sample wardrobe items. You can:
+
+- 🔍 search by name or filter by category and style tag
+- ⭐ mark favorites (they get a small scoring boost in recommendations)
+- ✏️ edit rows inline within the session
+- ➕ add your own items
+- 🔄 restore the full sample wardrobe at any time
+
+All changes are **session-only** — nothing persists, nothing is stored, nothing is shared.
+
+---
+
+## 🏗️ How it's built
+
+Three layers, each with its own job — and a fallback for when things go sideways:
 
 ```mermaid
 flowchart TD
-    User["User"] --> StreamlitCloud["Streamlit Community Cloud"]
-    StreamlitCloud --> App["Python Streamlit app"]
+    User["👤 User"] --> StreamlitCloud["☁️ Streamlit Community Cloud"]
+    StreamlitCloud --> App["🐍 Python Streamlit app"]
 
-    App --> SessionState["Streamlit Session State"]
-    App --> WardrobeJSON["data/wardrobe.json"]
-    App --> Recommender["Local rule-based recommendation engine"]
+    App --> SessionState["💾 Session State"]
+    App --> WardrobeJSON["👗 data/wardrobe.json"]
+    App --> Recommender["🧠 Local rule-based engine"]
 
-    Recommender --> MainOutfit["Main Outfit"]
-    Recommender --> AlternativeOutfit["Alternative Outfit"]
+    Recommender --> MainOutfit["✨ Main Outfit"]
+    Recommender --> AlternativeOutfit["💫 Alternative Outfit"]
 
-    App --> AIClient["GitHub Models client"]
-    AIClient -->|"GITHUB_TOKEN configured"| TextModel["AI explanation model"]
-    AIClient -->|"No token or API unavailable"| LocalTextFallback["Local explanation fallback"]
+    App --> AIClient["🤖 GitHub Models client"]
+    AIClient -->|"token configured"| TextModel["💬 AI explanation"]
+    AIClient -->|"no token / unavailable"| LocalTextFallback["📝 Local fallback"]
 
-    App --> PhotoAnalyzer["Photo Analyzer"]
-    PhotoAnalyzer -->|"GITHUB_TOKEN configured"| VisionModel["Vision-capable model"]
-    PhotoAnalyzer -->|"No token or API unavailable"| LocalPhotoFallback["Safe photo fallback"]
+    App --> PhotoAnalyzer["📸 Photo Analyzer"]
+    PhotoAnalyzer -->|"token configured"| VisionModel["👁️ Vision model"]
+    PhotoAnalyzer -->|"unavailable"| LocalPhotoFallback["🛡️ Safe fallback"]
 
-    App --> ImpactClient["Rewear Impact client"]
-    ImpactClient -->|"IMPACT_API_URL configured"| AzureACA["Azure Container Apps"]
-    AzureACA --> ImpactAPI["TypeScript Express mini API"]
-    ImpactClient -->|"API unavailable"| PythonImpactFallback["Local Python fallback"]
+    App --> ImpactClient["🌱 Rewear Impact client"]
+    ImpactClient -->|"IMPACT_API_URL set"| AzureACA["☁️ Azure Container Apps"]
+    AzureACA --> ImpactAPI["📦 TypeScript Express API"]
+    ImpactClient -->|"API unavailable"| PythonImpactFallback["🐍 Python fallback"]
 
-    Copilot["GitHub Copilot"] -.-> DevWorkflow["AI-assisted development workflow"]
+    Copilot["🤖 GitHub Copilot"] -.-> DevWorkflow["⚡ Dev workflow"]
     DevWorkflow -.-> App
     DevWorkflow -.-> ImpactAPI
-    DevWorkflow -.-> Docs["Docs and architecture notes"]
+    DevWorkflow -.-> Docs["📚 Docs"]
 
-    MCP["MCP server tools"] -.-> AgentReady["Agent-ready tooling"]
-    AgentReady -.-> PrivacyTool["Privacy safety auditor"]
-    AgentReady -.-> GapTool["Closet gap detector"]
-    AgentReady -.-> DebugTool["Outfit debug report"]
+    MCP["🔌 MCP server"] -.-> AgentReady["🕹️ Agent tooling"]
+    AgentReady -.-> PrivacyTool["🛡️ Privacy auditor"]
+    AgentReady -.-> GapTool["🔍 Gap detector"]
+    AgentReady -.-> DebugTool["🐛 Debug report"]
 ```
 
-### What runs where
+### The rule: every external service has a local fallback
 
-| Layer | How it works |
-|---|---|
-| Outfit selection | Local rule-based Python — no API call required |
-| Explanation text | GitHub Models when configured, local fallback otherwise |
-| Photo analysis | Vision model when configured, safe failure otherwise |
-| Rewear Impact | TypeScript API on Azure when available, Python fallback otherwise |
-| Wardrobe storage | JSON sample data + Streamlit session state |
-| MCP tools | Standalone agent-ready tooling |
-
-This separation makes the app easier to reason about, safer to demo, and reliable when external services are unavailable.
+| Layer | What does the work |
+|:---|:---|
+| 👗 Outfit selection | Local rule-based Python — **no API needed** |
+| 💬 Explanation text | GitHub Models → local fallback |
+| 📸 Photo analysis | Vision model → safe failure message |
+| 🌱 Rewear Impact | TypeScript API on Azure → Python fallback |
+| 💾 Wardrobe storage | JSON file + Streamlit session state |
+| 🔌 MCP tools | Standalone — optional extension layer |
 
 ---
 
-## 🔧 How the recommendation engine works
+## 🧠 How the recommendation engine actually works
 
-The engine is local and rule-based. It scores every wardrobe item against:
+The engine is local and inspectable. For each item in the wardrobe, it calculates a score based on:
 
-- **scenario** — office, date night, travel, custom,
-- **category** — top, bottom, jacket, shoes, accessory, dress,
-- **weather or travel context** — climate match, season, flight type,
-- **style vibes** — cozy, polished, minimal, elegant, streetwear…,
-- **formality** — matched to scenario requirements,
-- **comfort** — matched to user preference,
-- **favorite flag** — small scoring boost for marked favorites.
+- 🎯 **scenario** — does this item suit office rain, a date, travel, or the custom context?
+- 📦 **category** — is the outfit actually complete? (top + bottom + shoes, or dress + shoes, etc.)
+- 🌡️ **climate** — does the fabric and coverage match the weather or travel context?
+- 💅 **style vibes** — does the item's tags match the chosen vibes?
+- 👔 **formality** — appropriate for the occasion?
+- 🛋️ **comfort** — matches the comfort preference?
+- ⭐ **favorites** — small boost for marked favorites
 
-It then assembles a complete, compatible outfit and generates a genuine alternative — not a copy of the first result.
+Then it assembles the highest-scoring complete outfit, and a genuine second alternative — not just a reshuffled copy of the first one.
 
-The logic lives in `src/recommendation_engine.py`.
-
----
-
-## 🛡️ Responsible AI and Privacy
-
-Wardrobe Wizard is built around a few practical safety rules:
-
-- ✅ The user stays in control at every step
-- ✅ AI-detected items require human review before being added
-- ✅ Photo analysis is clothing-only — no sensitive inferences
-- ✅ No login, no persistent database, no profile building
-- ✅ Session-only changes disappear when the session resets
-- ✅ External API failures fall back gracefully — no silent errors
-- ✅ MCP privacy auditor tool can inspect outfit AI text for risky language
-
-Full documentation: `docs/ai_safety_and_privacy.md`
+All of this lives in `src/recommendation_engine.py`.
 
 ---
 
-## 🔌 MCP Tools
+## 🛡️ Responsible AI — the non-negotiables
 
-Wardrobe Wizard includes standalone MCP tooling for agent-ready and future Copilot-style workflows:
+Wardrobe Wizard is designed around user control and privacy from the ground up:
 
-| Tool | Purpose |
-|---|---|
-| `closet_gap_detector` | Finds missing wardrobe categories or practical weak spots |
-| `privacy_safety_auditor` | Checks outfit AI text for unsafe personal inferences |
-| `outfit_debug_report` | Explains why an outfit recommendation did or did not work |
+- ✅ The user reviews all AI-detected items before they're added — always
+- ✅ Photo analysis is clothing-only, with hard prompt-level constraints
+- ✅ No sensitive inferences — ever (body, age, gender, health, ethnicity...)
+- ✅ No login, no account, no profile, no persistent database
+- ✅ Session-only changes — disappear when the session resets
+- ✅ Every external service fails gracefully — no silent errors
+- ✅ MCP privacy auditor tool checks AI-generated outfit text for risky language
 
-The MCP server is not required for the Streamlit app to run. It is an extension path for agent workflows.
-
-Details: `docs/mcp_tools.md`
+Full details: `docs/ai_safety_and_privacy.md`
 
 ---
 
-## 🤖 GitHub Copilot Usage
+## 🔌 MCP Tools — agent-ready from day one
 
-GitHub Copilot was a genuine development partner throughout the project — not just autocomplete.
+Three standalone tools for agent workflows and future Copilot integration:
 
-### 🧠 Architecture and planning
+| Tool | What it does |
+|:---|:---|
+| 🔍 `closet_gap_detector` | Finds missing categories or wardrobe weak spots |
+| 🛡️ `privacy_safety_auditor` | Checks outfit AI text for unsafe personal inferences |
+| 🐛 `outfit_debug_report` | Explains why a recommendation did or didn't work |
 
-- Shaped the separation between local rule-based recommendations and generative AI explanations
-- Helped design the fallback-first architecture (every external service has a local fallback)
-- Structured the TypeScript Rewear Impact mini API
-- Clarified the boundary between active runtime services and documented future extensions
+The MCP server is not required for the Streamlit app to run — it's an extension path for agent workflows.
 
-### ⚡ Python and Streamlit development
+Full docs: `docs/mcp_tools.md`
 
+---
+
+## 🤖 GitHub Copilot — how it was actually used
+
+Copilot was a genuine development partner here, not just autocomplete. Here's what that looked like in practice:
+
+### 🏛️ Architecture decisions
+- Designed the separation: local rule-based engine vs. generative AI explanation layer
+- Shaped the fallback-first architecture — every external service has a local fallback
+- Structured the TypeScript Rewear Impact mini API and its Docker/Azure deployment path
+- Clarified which services are active runtime and which are documented future extensions
+
+### 🐍 Python + Streamlit
 - Streamlit UI refinement and session-state handling
-- Wardrobe item review flows and duplicate-prevention logic
-- Category validation and tag normalization
-- Photo upload handling and safe error messages
+- Wardrobe review flow, duplicate-prevention logic, and category mismatch detection
+- Photo upload handling and safe error messaging
+- Tag normalization and controlled vocabulary enforcement
 
-### 🔨 TypeScript mini API
-
-- Express endpoint structure and request/response shape
-- TypeScript build checks and Docker deployment notes
+### 📦 TypeScript mini API  
+- Express endpoint structure, request/response shape, and error handling
+- TypeScript build and Docker deployment notes
 - Readable API documentation
 
 ### 🛡️ Responsible AI review
+- Wording around sensitive attributes in photo analysis prompts
+- Fallback behavior documentation
+- Sustainability estimate disclaimer wording
+- Public documentation for AI limitations
 
-- Wording around sensitive attributes in photo analysis
-- Fallback behavior when external models are unavailable
-- Public documentation for AI limitations and sustainability disclaimers
-
-### 📝 Documentation and submission polish
-
-- README structure and architecture explanation
+### 📝 Documentation + submission polish
+- README structure and architecture narrative
 - Public-release cleanup and smoke-test planning
-- Hackathon submission storytelling
 
-> Screenshots of Copilot interactions are in `docs/copilot-usage/`
-
----
-
-## 🏆 Evaluation Criteria Alignment
-
-| Criteria | Weight | How Wardrobe Wizard delivers |
-|---|---|---|
-| **Accuracy & Relevance** | 20% | Working public demo, public repo, GitHub Copilot throughout, real user-centered AI problem with practical output |
-| **Reasoning & Multi-step Thinking** | 20% | Outfit scoring combines scenario + climate + vibes + formality + comfort + favorites + category completeness — all local and inspectable |
-| **Creativity & Originality** | 15% | Wardrobe reuse framing, decision-fatigue angle, clothing-only photo review, Rewear Impact sustainability layer, corgi wizard identity — not a standard CRUD app |
-| **User Experience & Presentation** | 15% | Low-energy mode, human review before AI adds anything, friendly fallbacks, no red errors, no login friction |
-| **Reliability & Safety** | 20% | Every external service has a local fallback. Photo analysis has enforced ethical boundaries. No persistent data. Session-only changes. |
-| **Community Vote** | 10% | Relatable premise — everyone has had the "nothing to wear" moment. Sustainability angle. Corgi mascot. |
+> Screenshots of Copilot interactions live in `docs/copilot-usage/`
 
 ---
 
-## 🚀 Quick Start
+## 🏆 How Wardrobe Wizard maps to the judging criteria
 
-### 1. Clone
+| Criteria | Weight | What the Wizard delivers |
+|:---|:---:|:---|
+| 🎯 **Accuracy & Relevance** | 20% | Working public demo · Public repo · GitHub Copilot throughout · Real user problem with practical, testable output |
+| 🧠 **Reasoning & Multi-step Thinking** | 20% | 7 scoring signals combined per item · Category completeness check · Climate + travel context interpretation · Alternative outfit generation |
+| 🎨 **Creativity & Originality** | 15% | Decision-fatigue angle · Clothing-only photo ethics · Rewear Impact sustainability layer · Corgi wizard mascot · Low-energy mode as intentional calm design |
+| 💅 **User Experience** | 15% | Human review before AI adds anything · Low-energy mode · Friendly fallbacks · No red errors · No login friction · Demo-ready at all times |
+| 🛡️ **Reliability & Safety** | 20% | Every external service has a local fallback · Hard ethical constraints on photo analysis · No persistent data · Session-only changes · Graceful degradation throughout |
+| 💜 **Community Vote** | 10% | Relatable premise · Sustainability feel-good moment · Corgi mascot · "Wait, this actually works" factor |
+
+---
+
+## 🚀 Get it running in 3 steps
 
 ```bash
+# 1. Clone
 git clone https://github.com/ffbogusia/wardrobe-wizard-submission.git
 cd wardrobe-wizard-submission
-```
 
-### 2. Create a virtual environment
-
-```bash
+# 2. Set up Python environment
 python -m venv .venv
-# Windows
-.venv\Scripts\activate
-# macOS/Linux
-source .venv/bin/activate
-```
+source .venv/bin/activate        # macOS/Linux
+# .venv\Scripts\activate         # Windows
 
-### 3. Install and run
-
-```bash
+# 3. Install and launch ✨
 pip install -r requirements.txt
 streamlit run app.py
 ```
 
+That's it. The app runs fully without any external services or API keys.
+
 ---
 
-## ⚙️ Environment Variables
-
-The app runs fully without external services. Optional integrations:
+## ⚙️ Optional: connect the AI layers
 
 ```bash
-# AI explanations and clothing-only photo analysis
+# GitHub Models — for AI explanations and clothing-only photo analysis
 GITHUB_TOKEN=your_github_token_here
 
-# Rewear Impact mini API (falls back to local Python if unavailable)
+# Rewear Impact mini API — falls back to local Python if unavailable
 IMPACT_API_URL=https://your-container-app-url.azurecontainerapps.io
 ```
 
-Use `.env.example` as a template. Do not commit real secrets. On Streamlit Community Cloud, add secrets in the app settings panel.
+Use `.env.example` as a template. Never commit real secrets. On Streamlit Community Cloud, add secrets in the app settings panel.
 
 ---
 
-## 🌐 Rewear Impact Mini API
+## 📦 Rewear Impact mini API
 
-A real TypeScript + Express API deployed to Azure Container Apps.
+A real TypeScript + Express API, containerised and deployed to Azure Container Apps.
 
 ```bash
 cd impact-api
-npm install
-npm run build
-npm start
-```
+npm install && npm run build && npm start
 
-```bash
 # Health check
 curl http://localhost:3000/health
 
@@ -358,122 +353,122 @@ curl -X POST http://localhost:3000/api/rewear-impact \
   -d '{"items":[{"name":"White cotton T-shirt","category":"top"},{"name":"Blue jeans","category":"bottom"}],"favorite_item_ids":[]}'
 ```
 
-**Docker:**
 ```bash
-cd impact-api
+# Docker
 docker build -t wardrobe-wizard-impact-api .
 docker run -p 3000:3000 wardrobe-wizard-impact-api
 ```
 
-If the Azure Container App is scaled to zero, the first request uses the local Python fallback while the container wakes up. This is expected behavior — the demo stays usable.
+When the Azure Container App is scaled to zero, the first request uses the local Python fallback while it wakes up. Expected behaviour — the demo stays usable.
 
 ---
 
-## 🗂️ Project Structure
+## 🗂️ Project structure
 
-```text
+```
 wardrobe-wizard/
-├── app.py
-├── README.md
-├── requirements.txt
-├── requirements-mcp.txt
-├── .env.example
-├── .streamlit/
-│   └── config.toml
-├── assets/
-│   ├── corgi-wizard.png
+├── 🐍 app.py                        ← Streamlit entry point
+├── 📋 requirements.txt
+├── 📋 requirements-mcp.txt
+├── ⚙️  .env.example
+├── 🎨 .streamlit/config.toml
+│
+├── 🖼️  assets/
+│   ├── corgi-wizard.png             ← the mascot 🐕‍🦺✨
 │   └── corgi-mascot-sticker.png
-├── data/
-│   └── wardrobe.json
-├── src/
-│   ├── ai_client.py
-│   ├── impact_client.py
-│   ├── item_parser.py
-│   ├── photo_analyzer.py
-│   ├── recommendation_engine.py
-│   └── corgi_mascot.py
-├── impact-api/
+│
+├── 👗 data/wardrobe.json            ← 36-item sample wardrobe
+│
+├── 🧠 src/
+│   ├── recommendation_engine.py     ← the brain
+│   ├── ai_client.py                 ← GitHub Models integration
+│   ├── impact_client.py             ← Rewear Impact + fallback
+│   ├── item_parser.py               ← natural language → wardrobe rows
+│   ├── photo_analyzer.py            ← clothing-only vision analysis
+│   └── corgi_mascot.py              ← 🐕 essential
+│
+├── 📦 impact-api/                   ← TypeScript mini API
 │   ├── Dockerfile
-│   ├── package.json
-│   ├── tsconfig.json
 │   └── src/
 │       ├── server.ts
 │       └── impactEstimator.ts
-├── mcp_server/
+│
+├── 🔌 mcp_server/
 │   └── wardrobe_mcp_server.py
-├── docs/
+│
+├── 📚 docs/
 │   ├── architecture.md
-│   ├── architecture_diagram.md
-│   ├── azure_architecture.md
-│   ├── deployment.md
+│   ├── ai_safety_and_privacy.md     ← responsible AI details
 │   ├── sustainability_methodology.md
-│   ├── ai_safety_and_privacy.md
 │   ├── mcp_tools.md
-│   ├── project_scope.md
-│   └── recommendation_rules.md
-└── knowledge/
+│   └── ...
+│
+└── 🧩 knowledge/
     ├── outfit_matching_guide.md
-    ├── wardrobe_dataset_summary.md
-    └── wardrobe_style_rules.md
+    ├── wardrobe_style_rules.md
+    └── wardrobe_dataset_summary.md
 ```
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠️ Tech stack
 
-| Technology | Purpose |
-|---|---|
-| Python | Main application logic |
-| Streamlit | Interactive web UI |
-| pandas | Data display and editing |
-| JSON | Sample wardrobe data |
-| GitHub Models | AI explanations and clothing-only photo analysis |
-| TypeScript | Rewear Impact mini API |
-| Node.js + Express | API runtime |
-| Docker | Containerization for the mini API |
-| Azure Container Apps | Hosted Rewear Impact API |
-| Streamlit Community Cloud | Public app deployment |
-| MCP | Agent-ready tool interface |
-| GitHub Copilot | AI-assisted development throughout |
+| | Technology | What it does here |
+|:---:|:---|:---|
+| 🐍 | Python | Main app logic |
+| 🎈 | Streamlit | Interactive web UI + deployment |
+| 🐼 | pandas | Wardrobe data display and editing |
+| 🤖 | GitHub Models | AI explanations + clothing-only photo analysis |
+| 📘 | TypeScript | Rewear Impact mini API |
+| ⚡ | Node.js + Express | API runtime |
+| 🐳 | Docker | API containerisation |
+| ☁️ | Azure Container Apps | Rewear Impact API hosting |
+| 🔌 | MCP | Agent-ready tool interface |
+| 🤖 | GitHub Copilot | AI-assisted development throughout |
 
 ---
 
-## ✅ Smoke Test Checklist
+## ✅ Smoke test checklist
 
 ```bash
 python -m compileall app.py src mcp_server
 cd impact-api && npm run build && npm audit && cd ..
 ```
 
-Manual checks:
 - [ ] Landing page loads
 - [ ] Recommend Outfit works
 - [ ] Travel day hot-to-cold scenario works
 - [ ] Main Outfit and Alternative Outfit appear
 - [ ] Why it works appears
-- [ ] Rewear Impact appears (mini API or fallback)
-- [ ] Add one item works, review table appears
-- [ ] Add multiple items works
+- [ ] Rewear Impact appears (API or Python fallback)
+- [ ] Add one item → review table appears → saves correctly
+- [ ] Add multiple items in one batch
 - [ ] Photo Analyzer respects clothing-only constraints
-- [ ] Browse Wardrobe search and filter works
-- [ ] No red Streamlit errors
+- [ ] Browse Wardrobe search and filter work
+- [ ] No red Streamlit errors anywhere
 
 ---
 
 ## 📝 License
 
-MIT License.
+MIT — use it, remix it, wear it well.
 
 ---
 
-## 🙏 Acknowledgments
+## 💜 Acknowledgments
 
-- **GitHub Copilot** — AI-assisted development throughout
-- **Streamlit** — public app interface and deployment
-- **GitHub Models** — AI explanations and clothing-only photo analysis
-- **Azure Container Apps** — Rewear Impact mini API hosting
-- **Model Context Protocol** — agent-ready tooling ecosystem
+- 🤖 **GitHub Copilot** — genuine development partner throughout
+- 🎈 **Streamlit** — app interface and community cloud deployment
+- 🤖 **GitHub Models** — AI explanations and clothing-only photo analysis
+- ☁️ **Azure Container Apps** — Rewear Impact API hosting
+- 🔌 **Model Context Protocol** — agent-ready tooling ecosystem
 
 ---
 
-**🧙 Wardrobe Wizard: less "I have nothing to wear," more "wait, this actually works."**
+<div align="center">
+
+### 🧙✨ *Less "I have nothing to wear." More "wait, this actually works."* ✨🧙
+
+*Built with 💜 and way too much wardrobe data for the Microsoft Agents League @ AI Skills Fest 2026*
+
+</div>
