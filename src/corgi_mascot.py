@@ -35,7 +35,7 @@ def get_corgi_mascot_html(mood: str = "idle") -> str:
 .ww-corgi-wrap {
     position: fixed;
     right: 18px;
-    bottom: 16px;
+    bottom: 96px;
     width: 155px;
     max-width: 22vw;
     z-index: 999999;
@@ -117,7 +117,7 @@ def get_corgi_mascot_html(mood: str = "idle") -> str:
     .ww-corgi-wrap {
         width: 108px;
         right: 10px;
-        bottom: 10px;
+        bottom: 86px;
     }
 
     .ww-corgi-sparkle {
