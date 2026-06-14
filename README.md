@@ -25,7 +25,7 @@
 
 <br>
 
-**[✨ Try the live demo](https://wardrobe-wizard.streamlit.app/) · [📹 Watch the demo video](https://youtu.be/TODO) · [📖 Docs](docs/)**
+**[✨ Try the live demo](https://wardrobe-wizard.streamlit.app/) · [📹 Watch the demo video](https://youtu.be/ZIBCLhq2UK4) · [📖 Docs](docs/)**
 
 </div>
 
