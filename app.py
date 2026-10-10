@@ -17,6 +17,7 @@ from src.photo_analyzer import analyze_outfit_photo
 from src.recommendation_engine import recommend_outfits
 from src.corgi_mascot import get_corgi_mascot_html
 from src.impact_client import calculate_rewear_impact
+from src.closet_puzzle import render_closet_puzzle
 
 
 DATA_PATH = Path("data/wardrobe.json")
@@ -393,9 +394,17 @@ def display_splash_screen() -> None:
     if not HERO_IMAGE_PATH.exists():
         st.title("✨ Wardrobe Wizard ✨")
         st.write("Magically better outfits, every day.")
-        if st.button("✨ Enter the Wardrobe ✨"):
-            st.session_state["app_started"] = True
-            st.rerun()
+        wardrobe_col, puzzle_col = st.columns(2)
+        with wardrobe_col:
+            if st.button("✨ Enter the Wardrobe ✨", width="stretch"):
+                st.session_state["app_started"] = True
+                st.session_state["closet_puzzle_started"] = False
+                st.rerun()
+        with puzzle_col:
+            if st.button("🧩 Play Closet Puzzle", width="stretch"):
+                st.session_state["closet_puzzle_started"] = True
+                st.session_state["app_started"] = False
+                st.rerun()
         return
 
     hero_b64 = _load_hero_image_b64()
@@ -471,12 +480,31 @@ def display_splash_screen() -> None:
         unsafe_allow_html=True,
     )
 
-    # Native st.button() — pulled up over the image by the CSS :has() rule above
-    _, btn_col, _ = st.columns([1.5, 2, 1.5])
-    with btn_col:
+    # Native st.button() calls — pulled up over the image by the CSS :has() rule above
+    _, wardrobe_col, puzzle_col, _ = st.columns([1.15, 1.6, 1.6, 1.15])
+    with wardrobe_col:
         if st.button("✨ Enter the Wardrobe ✨", width="stretch"):
             st.session_state["app_started"] = True
+            st.session_state["closet_puzzle_started"] = False
             st.rerun()
+    with puzzle_col:
+        if st.button("🧩 Play Closet Puzzle", width="stretch"):
+            st.session_state["closet_puzzle_started"] = True
+            st.session_state["app_started"] = False
+            st.rerun()
+
+
+def display_closet_puzzle_page() -> None:
+    """Display the standalone Closet Puzzle path from the splash screen."""
+    back_col, _ = st.columns([1, 5])
+
+    with back_col:
+        if st.button("← Back to start", width="stretch"):
+            st.session_state["closet_puzzle_started"] = False
+            st.session_state["app_started"] = False
+            st.rerun()
+
+    render_closet_puzzle()
 
 
 def display_app_header() -> None:
@@ -1638,6 +1666,13 @@ inject_custom_css()
 # display_splash_screen() uses a native st.button(), so no query params needed.
 if "app_started" not in st.session_state:
     st.session_state["app_started"] = False
+
+if "closet_puzzle_started" not in st.session_state:
+    st.session_state["closet_puzzle_started"] = False
+
+if st.session_state["closet_puzzle_started"]:
+    display_closet_puzzle_page()
+    st.stop()
 
 if not st.session_state["app_started"]:
     display_splash_screen()
